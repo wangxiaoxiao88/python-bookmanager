@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="{{ url_for('addBook') }}" method=post class=add-entry>
+      <dl>
+        <dt>Name:
+        <dd><input type=text size=30 name=name>
+        <dt>Author:
+        <dd><input type=text size=30 name=author>
+        <dt>Price:
+        <dd><input type=text size=30 name=price>
+        <dt>Url:
+        <dd><input type=text size=30 name=url>
+        <dd><input type=submit value=Add>
+      </dl>
+  </form>
+  <div class=books>
+  {% for book in books %}
+  <div class=book>
+      <div class=pic><img src={{book.url}} height=160 width=160>
+    </div>
+   <div class=moreinfo>
+       <div class=name><{{ book.name }}></div>
+      <div class=author>{{ book.author }}</div> 
+      <div class=price>{{book.price}}</div>
+      <div class=delbut>
+      <form action="{{url_for('delBook')}}" method=post>
+      <input type=hidden name=id value={{book.id}}>
+      <input type=submit value=Delete class=delBut>
+  </form>
+  </div>
+    </div>
+    </div>
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+  </ul>
+{% endblock %}
