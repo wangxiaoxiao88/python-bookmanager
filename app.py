@@ -79,7 +79,7 @@ def close(exception):
 def init_db():
     top=_app_ctx_stack.top
     if not hasattr(top,'db'):
-        conn = MySQLdb.connect(host='192.168.1.104', user='root',passwd='root',db='test',charset='utf8') 
+        conn = MySQLdb.connect(host='127.0.0.1', user='root',passwd='root',db='test',charset='utf8') 
         top.db=conn
     
     return top.db
@@ -117,4 +117,4 @@ def show():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='192.168.0.145')
+    app.run()
