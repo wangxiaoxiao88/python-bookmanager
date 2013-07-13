@@ -2,6 +2,7 @@
 
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, _app_ctx_stack
 import MySQLdb
+import config
 
 app = Flask(__name__)
 
@@ -79,7 +80,7 @@ def close(exception):
 def init_db():
     top=_app_ctx_stack.top
     if not hasattr(top,'db'):
-        conn = MySQLdb.connect(host='127.0.0.1', user='root',passwd='root',db='test',charset='utf8') 
+        conn = MySQLdb.connect(host=config.DB_HOST, user=config.DB_USER,passwd=config.DB_PASSWD,db=config.DB_NAME,charset='utf8') 
         top.db=conn
     
     return top.db
