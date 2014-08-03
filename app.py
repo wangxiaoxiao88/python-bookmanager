@@ -118,4 +118,4 @@ def del_db(sql):
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='10.2.45.79')
+    app.run()
