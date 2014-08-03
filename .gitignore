@@ -1,7 +1,6 @@
 *.swp
 *.pyc
 *.pyo
-config.py
 .gitignore
 
 _project

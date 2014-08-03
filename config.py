@@ -1,0 +1,6 @@
+DB_HOST='10.22.6.60'
+DB_PORT=3306
+DB_USER='root'
+DB_PASSWD='root'
+DB_DATABASE='test'
+DB_CHARSET='utf8'
