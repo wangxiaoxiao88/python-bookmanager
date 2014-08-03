@@ -2,16 +2,25 @@
 {% block body %}
     <form action="{{ url_for('create') }}" method=post class=add-entry>
       <dl>
-        <dt>Name:
-        <dd><input type=text size=30 name=name>
-        <dt>Author:
-        <dd><input type=text size=30 name=author>
-        <dt>Price:
-        <dd><input type=text size=30 name=price>
-        <dt>Url:
-        <dd><input type=text size=30 name=url>
-        <dd><input type=submit value=Add>
-      </dl>
+        <table>
+        <tr>
+        <td>Name:</td>
+        <td><input type=text size=30 name=name></td>
+        </tr>
+        <tr>
+        <td>Author:</td>
+        <td><input type=text size=30 name=author></td>
+        </tr>
+        <tr>
+        <td>Price:</td>
+        <td><input type=text size=30 name=price></td>
+        </tr>
+        <tr>
+        <td>Url:</td>
+        <td><input type=text size=30 name=url></td>
+        </tr>
+      </table>
+        <input type=submit value=Add>
   </form>
   <div class=books>
   {% for book in books %}
